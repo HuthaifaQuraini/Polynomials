@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="mainPanel" prefHeight="580.0" prefWidth="396.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="datastr.FXMLDocumentController">
+    <children>
+        <JFXToolbar fx:id="tog_bar" prefHeight="66.0" prefWidth="396.0" style="-fx-background-color: #367ABD;">
+            <center>
+                <Label text="Polynomials" textFill="WHITE" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="Consolas" size="27.0" />
+                    </font>
+                </Label>
+            </center>
+        </JFXToolbar>
+      <Label layoutX="17.0" layoutY="104.0" text="First equation">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="17.0" layoutY="157.0" text="Second equation">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="14.0" layoutY="217.0" prefHeight="19.0" prefWidth="112.0" text="Choose operation">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btn_add" layoutX="137.0" layoutY="207.0" onAction="#Add" style="-fx-background-color: #367ABD;" text="+" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_sub" layoutX="227.0" layoutY="207.0" onAction="#subtraction" prefHeight="39.0" prefWidth="37.0" style="-fx-background-color: #367ABD;" text="-" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_mult" layoutX="316.0" layoutY="207.0" onAction="#multiply" prefHeight="39.0" prefWidth="37.0" style="-fx-background-color: #367ABD;" text="*" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="14.0" layoutY="263.0" prefHeight="25.0" prefWidth="112.0" text="Result equation">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <JFXRadioButton fx:id="rd_Infix" layoutX="17.0" layoutY="321.0" onAction="#infix" style="-jfx-selected-color: #367ABD;" text="Infix" />
+      <JFXRadioButton fx:id="rd_Postfix" layoutX="136.0" layoutY="321.0" onAction="#postfix" style="-jfx-selected-color: #367ABD;" text="Postfix" />
+      <JFXRadioButton fx:id="rd_Prefix" layoutX="263.0" layoutY="321.0" onAction="#prefix" style="-jfx-selected-color: #367ABD;" text="Prefix" />
+      <TextField fx:id="txt_FirstEquation" layoutX="140.0" layoutY="102.0" prefHeight="25.0" prefWidth="216.0" promptText="Enter the first equation" />
+      <TextField fx:id="txt_SecondEquation" layoutX="140.0" layoutY="155.0" prefHeight="25.0" prefWidth="216.0" promptText="Enter the second equation" />
+      <TextField fx:id="txt_toSolve" layoutX="137.0" layoutY="425.0" prefHeight="25.0" prefWidth="216.0" promptText="Enter number to solve equation" />
+      <Label layoutX="17.0" layoutY="429.0" prefHeight="17.0" prefWidth="91.0" text="Enter number">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_solve" layoutX="140.0" layoutY="471.0" prefHeight="25.0" prefWidth="216.0" style="-fx-border-color: #367ABD;" />
+      <Label layoutX="17.0" layoutY="471.0" prefHeight="25.0" prefWidth="112.0" text="Result ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="142.0" layoutY="514.0" onAction="#Solve" style="-fx-background-color: #367ABD;" text="Solve !" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="15.0" layoutY="551.0" prefHeight="17.0" prefWidth="135.0" text="By: Hodaifa A Quraini" />
+      <Label layoutX="17.0" layoutY="369.0" text="The last equation">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="245.0" layoutY="514.0" onAction="#refresh" style="-fx-background-color: #367ABD;" text="Refresh!" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+      <ScrollPane layoutX="136.0" layoutY="254.0" prefHeight="58.0" prefWidth="216.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="214.0">
+               <children>
+                  <TextArea fx:id="lbAreal_ResultEquation" prefHeight="58.0" prefWidth="216.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <ScrollPane layoutX="137.0" layoutY="351.0" prefHeight="58.0" prefWidth="216.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="56.0" prefWidth="213.0" />
+        </content>
+      </ScrollPane>
+      <TextArea fx:id="lblArea_LastEquation" layoutX="136.0" layoutY="351.0" prefHeight="66.0" prefWidth="216.0" />
+    </children>
+</AnchorPane>
